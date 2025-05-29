@@ -7,11 +7,12 @@ const Header = () => {
             <h1> LOGO </h1>
             <nav>
                 <ul>
-                    <li><Link to={"/"}>Home</link></li>
+                    <li><Link to={"/"}>Home</Link></li>
                     <li><Link to={"/produtos"}>Produtos</Link></li>
                 </ul>
             </nav>
-            </header></>
+        </header>
+        </>
      );
 }
  
