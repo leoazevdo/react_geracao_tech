@@ -1,23 +1,26 @@
 import { BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from "../pages/Home"
 import Produtos from "../pages/Produtos"
-import Header from "../components/Header"
-import Footer from "../components/Footer";
+import PageLayout from "../layouts/PageLayout";
+import NotFound from "../pages/NotFound";
+import Produto from "../pages/Produto";
 
 const Paths = () => {
     return ( 
             <>
               <BrowserRouter>
-              <Header/>
                     <Routes>
-                        <Route path="/" element={<Home/>}/>
-                        <Route path="/Produtos" element={<Produtos/>}/>
+                      <Route path="/" element={<PageLayout/>}>
+                        <Route index element={<Home/>}/>
+                        <Route path="/produtos" element={<Produtos/>}/>
+                        <Route path="/produto/:id/:nome" element={<Produto/>}/>
+                      </Route> 
+                      <Route path="*" element={<NotFound/>}/>
                     </Routes>
-              <Footer/>
               </BrowserRouter>
             </>
-        )
-        }
+        );
+}
      
  
 export default Paths;
